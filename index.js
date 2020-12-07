@@ -13,13 +13,14 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 var rootDir = path.resolve(__dirname);
 
 app.set('port', (process.env.PORT || 5000));
+app.use(wwwhisper());
 
 // Configure jade as template engine
 app.set('views', rootDir + '/views');
 app.set('view engine', 'ejs');
 app.set("view options", {layout: false});
 
-app.use(wwwhisper());
+
 // Parse the body
 // Warning: http://andrewkelley.me/post/do-not-use-bodyparser-with-express-js.html
 // parse application/json
