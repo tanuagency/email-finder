@@ -19,11 +19,11 @@ app.set('views', rootDir + '/views');
 app.set('view engine', 'ejs');
 app.set("view options", {layout: false});
 
+app.use(wwwhisper());
 // Parse the body
 // Warning: http://andrewkelley.me/post/do-not-use-bodyparser-with-express-js.html
 // parse application/json
 app.use(bodyParser.json())
-app.use(wwwhisper());
 
 // Serve static content from "public" directory
 app.use(express.static(rootDir + '/public'));
