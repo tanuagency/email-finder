@@ -23,10 +23,11 @@ app.set("view options", {layout: false});
 // Warning: http://andrewkelley.me/post/do-not-use-bodyparser-with-express-js.html
 // parse application/json
 app.use(bodyParser.json())
+app.use(wwwhisper());
 
 // Serve static content from "public" directory
 app.use(express.static(rootDir + '/public'));
-app.use(wwwhisper());
+
 
 app.get('/', function(req, res){
   res.render('index', {
