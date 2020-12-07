@@ -11,6 +11,7 @@ sessionData = sessionData ? JSON.parse(sessionData) : {submissions: 0, email: fa
  *
  * - Only allow 3 email checks before asking for email
  *
+ *
  
 function checkSession() {
   setTimeout(function () {
@@ -21,8 +22,11 @@ function checkSession() {
 
 }
 
+*/
+
 /*
  * On email modal submit handler
+ *
  *
 function onEmailSubmit(e) {
 
@@ -71,11 +75,15 @@ function onEmailSubmit(e) {
   return false;
 }
 
+*/
+
+
 /*
  * Validate the form
  *
  * - Check that fields aren't empty, if so add invalid class
- *
+ */
+
 function validate(data) {
   var valid = true;
 
@@ -98,7 +106,8 @@ function validate(data) {
  * Build data
  *
  * - Serialize form and build object
- *
+ */
+
 function buildData(form) {
   return $(form).serializeArray().reduce(function(obj, item) {
     obj[item.name] = item.value.trim();
@@ -114,6 +123,7 @@ function buildData(form) {
 /*
  * On submit handler
  *
+ */
 function onSubmit(e) {
   var loadingCover = $('.loading-cover');
   var result = $('#result');
