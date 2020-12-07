@@ -1,4 +1,5 @@
 var express = require('express');
+var wwwhisper = require('connect-wwwhisper');
 var path = require('path');
 var bodyParser = require('body-parser')
 var debug = require('debug')('index');
@@ -25,7 +26,7 @@ app.use(bodyParser.json())
 
 // Serve static content from "public" directory
 app.use(express.static(rootDir + '/public'));
-
+app.use(wwwhisper());
 
 app.get('/', function(req, res){
   res.render('index', {
