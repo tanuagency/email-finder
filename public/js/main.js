@@ -159,7 +159,7 @@ function onSubmit(e) {
     loadingCover.removeClass('show');
 
     // Set result
-    $('#result').html('Success! The email is: ' + data.email);
+    $('#result').html(data.email);
 
     // Count the number of submissions
     sessionData.submissions++;
